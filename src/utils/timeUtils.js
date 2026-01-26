@@ -1,6 +1,5 @@
 function parseDateTime(value) {
-  const regex = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/;
-  if (!regex.test(value)) return null;
+  if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(value)) return null;
 
   const [datePart, timePart] = value.split(" ");
   const [year, month, day] = datePart.split("-").map(Number);
@@ -8,17 +7,14 @@ function parseDateTime(value) {
 
   const date = new Date(year, month - 1, day, hour, minute, 0, 0);
 
-  if (
-    date.getFullYear() !== year ||
-    date.getMonth() !== month - 1 ||
-    date.getDate() !== day ||
-    date.getHours() !== hour ||
-    date.getMinutes() !== minute
-  ) {
-    return null;
-  }
+  const isValid =
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day &&
+    date.getHours() === hour &&
+    date.getMinutes() === minute;
 
-  return date;
+  return isValid ? date : null;
 }
 
 function isSameDay(start, end) {
