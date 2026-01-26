@@ -14,14 +14,12 @@ const router = express.Router();
 
 router.use(requireUser);
 
-// POST /bookings
 router.post(
   "/",
   validateRequest([validateCreateBooking]),
   createBookingHandler
 );
 
-// DELETE /bookings/:bookingId
 router.delete(
   "/:bookingId",
   validateRequest([validateCancelBooking]),
