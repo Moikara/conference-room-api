@@ -29,11 +29,6 @@ const ERROR_CODES = {
     message: "Booking must start and end on the same day"
   },
 
-  ENDS_AT_MIDNIGHT: {
-    code: "ENDS_AT_MIDNIGHT",
-    message: "Booking must end before midnight"
-  },
-
   BOOKING_TIME_OVERLAP: {
     code: "BOOKING_TIME_OVERLAP",
     message: "The selected time overlaps with an existing booking"

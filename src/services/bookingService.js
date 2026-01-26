@@ -35,10 +35,6 @@ function createBooking({ roomId, startTime, endTime, userId }) {
     return { error: ERROR_CODES.CROSS_DAY_BOOKING, status: 422 };
   }
 
-  if (end.getHours() === 0 && end.getMinutes() === 0) {
-    return { error: ERROR_CODES.ENDS_AT_MIDNIGHT, status: 422 };
-  }
-
   const existingBookings = bookingsByRoom.get(roomId) || [];
   for (const booking of existingBookings) {
     if (overlaps(start, end, booking.start, booking.end)) {
