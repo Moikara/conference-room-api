@@ -49,9 +49,9 @@ const ERROR_CODES = {
     message: "You are not allowed to perform this action"
   },
 
-  FILE_NOT_FOUND: {
-    code: "FILE_NOT_FOUND",
-    message: "Requested file does not exist"
+  INVALID_PATH: {
+    code: "INVALID_PATH",
+    message: "Requested path does not exist"
   },
 
   BAD_REQUEST: {
