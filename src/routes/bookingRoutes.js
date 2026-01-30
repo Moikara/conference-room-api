@@ -1,14 +1,8 @@
-const express = require("express");
-const {
-  createBookingHandler,
-  cancelBookingHandler
-} = require("../controllers/bookingController");
-const requireUser = require("../middleware/requireUser");
-const validateRequest = require("../middleware/validateRequest");
-const {
-  validateCreateBooking,
-  validateCancelBooking
-} = require("../validators/bookingValidators");
+import express from "express";
+import { createBookingHandler, cancelBookingHandler } from "../controllers/bookingController.js";
+import requireUser from "../middleware/requireUser.js";
+import validateRequest from "../middleware/validateRequest.js";
+import { validateCreateBooking, validateCancelBooking } from "../validators/bookingValidators.js";
 
 const router = express.Router();
 
@@ -26,4 +20,4 @@ router.delete(
   cancelBookingHandler
 );
 
-module.exports = router;
+export default router;

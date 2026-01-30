@@ -1,8 +1,8 @@
-const express = require("express");
-const bookingRoutes = require("./routes/bookingRoutes");
-const roomRoutes = require("./routes/roomRoutes");
-const routeCatcher = require("./middleware/routeCatcher");
-const errorHandler = require("./middleware/errorHandler");
+import express from "express";
+import bookingRoutes from "./routes/bookingRoutes.js";
+import roomRoutes from "./routes/roomRoutes.js";
+import routeCatcher from "./middleware/routeCatcher.js";
+import errorHandler from "./middleware/errorHandler.js";
 
 const app = express();
 app.use(express.json());
@@ -16,4 +16,4 @@ app.use(routeCatcher);
 // Global error handler (must be last)
 app.use(errorHandler);
 
-module.exports = app;
+export default app;

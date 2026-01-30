@@ -1,8 +1,8 @@
-const AppError = require("../utils/AppError");
-const ERROR_CODES = require("../utils/errorCodes");
+import AppError from "../utils/AppError.js";
+import ERROR_CODES from "../utils/errorCodes.js";
 
 function routeCatcher(req, res, next) {
-    next(new AppError(ERROR_CODES.INVALID_PATH, 404));    
+    next(new AppError(ERROR_CODES.INVALID_PATH, 404));
 }
 
-module.exports = routeCatcher;
+export default routeCatcher;

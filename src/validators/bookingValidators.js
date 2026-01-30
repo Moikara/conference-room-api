@@ -21,7 +21,7 @@ function validateCancelBooking(req) {
   return null;
 }
 
-module.exports = {
-  validateCreateBooking,
-  validateCancelBooking
+export { 
+  validateCreateBooking, 
+  validateCancelBooking 
 };

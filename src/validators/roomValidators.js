@@ -7,6 +7,4 @@ function validateRoomIdParam(req) {
   return null;
 }
 
-module.exports = {
-  validateRoomIdParam
-};
+export default validateRoomIdParam;

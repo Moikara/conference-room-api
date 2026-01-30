@@ -1,5 +1,5 @@
-const AppError = require("../utils/AppError");
-const ERROR_CODES = require("../utils/errorCodes");
+import AppError from "../utils/AppError.js";
+import ERROR_CODES from "../utils/errorCodes.js";
 
 /**
  * validators: array of functions (req) => string | null
@@ -24,4 +24,4 @@ function validateRequest(validators) {
   };
 }
 
-module.exports = validateRequest;
+export default validateRequest;

@@ -1,5 +1,5 @@
-const AppError = require("../utils/AppError");
-const { getRoomBookings } = require("../services/bookingService");
+import AppError from "../utils/AppError.js";
+import { getRoomBookings } from "../services/bookingService.js";
 
 function getRoomBookingsHandler(req, res, next) {
   const { roomId } = req.params;
@@ -16,6 +16,4 @@ function getRoomBookingsHandler(req, res, next) {
   res.status(200).json(result);
 }
 
-module.exports = {
-  getRoomBookingsHandler
-};
+export default getRoomBookingsHandler;

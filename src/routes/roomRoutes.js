@@ -1,8 +1,8 @@
-const express = require("express");
-const { getRoomBookingsHandler } = require("../controllers/roomController");
-const requireUser = require("../middleware/requireUser");
-const validateRequest = require("../middleware/validateRequest");
-const { validateRoomIdParam } = require("../validators/roomValidators");
+import express from "express";
+import getRoomBookingsHandler from "../controllers/roomController.js";
+import requireUser from "../middleware/requireUser.js";
+import validateRequest from "../middleware/validateRequest.js";
+import validateRoomIdParam from "../validators/roomValidators.js";
 
 const router = express.Router();
 
@@ -13,4 +13,4 @@ router.get(
   getRoomBookingsHandler
 );
 
-module.exports = router;
+export default router;

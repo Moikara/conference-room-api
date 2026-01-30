@@ -3,6 +3,4 @@
  */
 const bookingsByRoom = new Map();
 
-module.exports = {
-  bookingsByRoom
-};
+export default bookingsByRoom;

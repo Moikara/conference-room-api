@@ -1,9 +1,6 @@
-const AppError = require("../utils/AppError");
-const ERROR_CODES = require("../utils/errorCodes");
-const {
-  createBooking,
-  cancelBooking
-} = require("../services/bookingService");
+import AppError from "../utils/AppError.js";
+import ERROR_CODES from "../utils/errorCodes.js";
+import { createBooking, cancelBooking } from "../services/bookingService.js";
 
 function createBookingHandler(req, res, next) {
   const { roomId, startTime, endTime } = req.body;
@@ -45,7 +42,7 @@ function cancelBookingHandler(req, res, next) {
   res.status(200).json({ message: "Booking cancelled successfully" });
 }
 
-module.exports = {
-  createBookingHandler,
-  cancelBookingHandler
+export { 
+  createBookingHandler, 
+  cancelBookingHandler 
 };

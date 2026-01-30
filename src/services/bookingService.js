@@ -1,12 +1,7 @@
-const { bookingsByRoom } = require("../models/bookingModel");
-const { getRoomById } = require("../models/roomModel");
-const {
-  parseDateTime,
-  isSameDay,
-  isInPast,
-  overlaps
-} = require("../utils/timeUtils");
-const ERROR_CODES = require("../utils/errorCodes");
+import bookingsByRoom from "../models/bookingModel.js";
+import getRoomById from "../models/roomModel.js";
+import { parseDateTime, isSameDay, isInPast, overlaps } from "../utils/timeUtils.js";
+import ERROR_CODES from "../utils/errorCodes.js";
 
 let bookingCounter = 1;
 
@@ -115,7 +110,7 @@ function formatDate(date) {
   )} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
 
-module.exports = {
+export {
   createBooking,
   cancelBooking,
   getRoomBookings

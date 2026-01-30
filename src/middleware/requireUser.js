@@ -1,5 +1,5 @@
-const AppError = require("../utils/AppError");
-const ERROR_CODES = require("../utils/errorCodes");
+import AppError from "../utils/AppError.js";
+import ERROR_CODES from "../utils/errorCodes.js";
 
 function requireUser(req, res, next) {
   const userId = req.header("X-User-Id");
@@ -12,4 +12,4 @@ function requireUser(req, res, next) {
   next();
 }
 
-module.exports = requireUser;
+export default requireUser;

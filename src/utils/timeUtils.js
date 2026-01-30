@@ -33,9 +33,9 @@ function overlaps(startA, endA, startB, endB) {
   return startA < endB && startB < endA;
 }
 
-module.exports = {
-  parseDateTime,
-  isSameDay,
-  isInPast,
-  overlaps
+export { 
+  parseDateTime, 
+  isSameDay, 
+  isInPast, 
+  overlaps 
 };
